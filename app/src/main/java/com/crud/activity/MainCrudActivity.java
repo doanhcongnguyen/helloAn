@@ -11,12 +11,14 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.crud.db.AlphaDbHelper;
+import com.crud.table.TablePerson;
 
 import alpha.com.newhelllo.R;
 
 public class MainCrudActivity extends AppCompatActivity {
 
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
+    public final static String KEY_EXTRA_STUDENT_ID = "KEY_EXTRA_STUDENT_ID";
 
     private ListView listView;
     AlphaDbHelper dbHelper;
@@ -39,7 +41,7 @@ public class MainCrudActivity extends AppCompatActivity {
 
         dbHelper = new AlphaDbHelper(this);
         Cursor persons = dbHelper.getAllPersons();
-        String[] columns = new String[] {AlphaDbHelper.PERSON_COLUMN_ID, AlphaDbHelper.PERSON_COLUMN_NAME};
+        String[] columns = new String[] {TablePerson.COLUMN_ID, TablePerson.COLUMN_NAME};
         int[] widgets = new int[] {R.id.personId, R.id.personName};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.person_info, persons, columns, widgets, 0);
         listView = (ListView) findViewById(R.id.listView1);
@@ -48,7 +50,7 @@ public class MainCrudActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
                 Cursor item = (Cursor) listView.getItemAtPosition(position);
-                int personId = item.getInt(item.getColumnIndex(AlphaDbHelper.PERSON_COLUMN_ID));
+                int personId = item.getInt(item.getColumnIndex(TablePerson.COLUMN_ID));
                 Intent intent = new Intent(getApplicationContext(), CrudActivity.class);
                 intent.putExtra(KEY_EXTRA_CONTACT_ID, personId);
                 startActivity(intent);

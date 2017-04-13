@@ -19,9 +19,9 @@
     </string>
 
     <!-- CRUD activity -->
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Hello alpha</string>
     <string name="hello_world">Hello world!</string>
-    <string name="Add_New">Add New</string>
+    <string name="Add_New">Add New Person</string>
     <string name="edit">Edit Person</string>
     <string name="delete">Delete Person</string>
     <string name="save">Save Person</string>
@@ -31,8 +31,11 @@
     <string name="deletePerson">Confirm person deletion.</string>
     <string name="yes">Confirm</string>
     <string name="no">Cancel</string>
-    <string name="title_activity_activity_edit">CreateOrEditActivity</string>
+    <string name="title_activity_activity_edit">Person management</string>
     <string name="delete_person">Delete person?</string>
+    <string name="list_student">List of students</string>
+    <string name="list_person_text">List of persons</string>
+    <string name="add_new_student">Add student</string>
 
 
 </resources>

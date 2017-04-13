@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.crud.db.AlphaDbHelper;
+import com.crud.table.TablePerson;
 
 import alpha.com.newhelllo.R;
 
@@ -54,9 +55,9 @@ public class CrudActivity extends AppCompatActivity implements View.OnClickListe
 
             Cursor person = dbHelper.getPerson(personId);
             person.moveToFirst();
-            String personName = person.getString(person.getColumnIndex(AlphaDbHelper.PERSON_COLUMN_NAME));
-            String personGender = person.getString(person.getColumnIndex(AlphaDbHelper.PERSON_COLUMN_GENDER));
-            int personAge = person.getInt(person.getColumnIndex(AlphaDbHelper.PERSON_COLUMN_AGE));
+            String personName = person.getString(person.getColumnIndex(TablePerson.COLUMN_NAME));
+            String personGender = person.getString(person.getColumnIndex(TablePerson.COLUMN_GENDER));
+            int personAge = person.getInt(person.getColumnIndex(TablePerson.COLUMN_AGE));
             if (!person.isClosed()) {
                 person.close();
             }

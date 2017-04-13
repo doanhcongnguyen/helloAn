@@ -20,23 +20,25 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".DisplayMessageActivity"
             android:parentActivityName=".MainActivity" />
-
-        <activity android:name="com.crud.activity.CrudActivity"
+        <activity
+            android:name="com.crud.activity.CrudActivity"
             android:label="@string/title_activity_activity_edit" />
 
-        <activity android:name="com.crud.activity.MainCrudActivity"
+        <activity
+            android:name="com.crud.activity.MainCrudActivity"
             android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.crud.activity.StudentCrudActivity"></activity>
     </application>
 
 </manifest>

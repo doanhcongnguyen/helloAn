@@ -16,7 +16,8 @@
         android:inputType="textPersonName"
         android:hint="@string/name_blur"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/Send"
