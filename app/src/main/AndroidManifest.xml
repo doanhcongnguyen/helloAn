@@ -37,10 +37,10 @@
             android:label="@string/title_activity_activity_edit" />
         <activity
             android:name="com.crud.activity.MainCrudActivity"
-            android:label="@string/title_activity_main">
-        </activity>
+            android:label="@string/title_activity_main"></activity>
         <activity android:name="com.crud.activity.StudentCrudActivity" />
-        <activity android:name=".DisplayListView"></activity>
+        <activity android:name=".DisplayListView" />
+        <activity android:name=".InsertUser"></activity>
     </application>
 
 </manifest>

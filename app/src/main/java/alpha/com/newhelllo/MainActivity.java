@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void insertUser(View view) {
+        Intent intent = new Intent(this, InsertUser.class);
+        startActivity(intent);
+    }
+
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String jsonUrl = "https://doanh.000webhostapp.com/getUsersData.php";

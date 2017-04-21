@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.479" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/insertBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -63,5 +63,16 @@
         android:text="@string/textView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/insertBtn" />
+
+    <Button
+        android:id="@+id/insertUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="insertUser"
+        android:text="@string/insertUserBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

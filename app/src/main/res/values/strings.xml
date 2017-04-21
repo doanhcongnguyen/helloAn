@@ -40,6 +40,11 @@
     <string name="getJsonBtn">Get json</string>
     <string name="parseJsonBtn">Parse json</string>
     <string name="textView">textview</string>
+    <string name="insertUserBtn">Insert User</string>
+    <string name="name_hint">name</string>
+    <string name="email_hint">email</string>
+    <string name="contact_hint">contact</string>
+    <string name="password">password</string>
 
 
 </resources>
