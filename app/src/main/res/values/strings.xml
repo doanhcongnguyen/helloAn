@@ -36,6 +36,10 @@
     <string name="list_student">List of students</string>
     <string name="list_person_text">List of persons</string>
     <string name="add_new_student">Add student</string>
+    <string name="person">Person</string>
+    <string name="getJsonBtn">Get json</string>
+    <string name="parseJsonBtn">Parse json</string>
+    <string name="textView">textview</string>
 
 
 </resources>

@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.crud.db.AlphaDbHelper;
 import com.crud.table.TablePerson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import alpha.com.newhelllo.R;
 
@@ -37,6 +42,12 @@ public class CrudActivity extends AppCompatActivity implements View.OnClickListe
         nameEditText = (EditText) findViewById(R.id.editTextName);
         genderEditText = (EditText) findViewById(R.id.editTextGender);
         ageEditText = (EditText) findViewById(R.id.editTextAge);
+
+        Spinner spinner = (Spinner) findViewById(R.id.personSpinner);
+        List<String> listPersonSpinner = getListPersonSpinner();
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listPersonSpinner);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
 
         saveButton = (Button) findViewById(R.id.saveButton);
         editButton = (Button) findViewById(R.id.editButton);
@@ -152,5 +163,13 @@ public class CrudActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog alertDialog = builder.create();
         alertDialog.setTitle(R.string.delete_person);
         alertDialog.show();
+    }
+
+    public List<String> getListPersonSpinner() {
+        List<String> listPersonSpinner = new ArrayList<>();
+        listPersonSpinner.add("Doanh");
+        listPersonSpinner.add("Doanh 1");
+        listPersonSpinner.add("Doanh 2");
+        return listPersonSpinner;
     }
 }

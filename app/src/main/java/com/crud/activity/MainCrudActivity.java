@@ -18,7 +18,6 @@ import alpha.com.newhelllo.R;
 public class MainCrudActivity extends AppCompatActivity {
 
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
-    public final static String KEY_EXTRA_STUDENT_ID = "KEY_EXTRA_STUDENT_ID";
 
     private ListView listView;
     AlphaDbHelper dbHelper;
