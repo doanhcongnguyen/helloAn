@@ -1,0 +1,34 @@
+https://www.000webhost.com
+- user: doanhcongnguyen@gmail.com
+
+- database:
+	- dbName: id1414255_doanh_database
+	- dbUser: id1414255_doanh
+	- dbPass: doanh
+
+
+
+
+CREATE TABLE outcome_type (
+	outcome_type_id INT NOT NULL AUTO_INCREMENT,
+	outcome_type_name varchar(100) NOT NULL,
+	is_active int,
+	note varchar(300),
+	created_date date,
+	PRIMARY KEY (outcome_type_id)
+);
+
+CREATE TABLE outcome (
+	outcome_id INT NOT NULL AUTO_INCREMENT,
+	outcome_type_id INT,
+	outcome_date date,
+	day int,
+	month int,
+	year int,
+	user_id int,
+	note varchar(300),
+	created_date date,
+	PRIMARY KEY (outcome_id)
+);
+
+$sql  = 'INSERT INTO `outcome_type`(`outcome_name`) VALUES (\'books\'), (\'lunch\'), (\'misc\')';

@@ -1,0 +1,60 @@
+<html>
+
+<head>
+</head>
+
+<body>
+	<form action="insertOutcomeType.php" method="POST">
+		<div><p>Insert outcome type</p></div>
+		<table>
+			<tr>
+				<td>Outcome type Name: </td>
+				<td><input type="text" name="outcomeTypeName" /></td>
+			</tr>
+			
+			<tr>
+				<td>Note: </td>
+				<td><input type="text" name="note" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Insert" />
+	</form>
+	
+	<br /><hr />
+	
+	<form action="updateOutcomeType.php" method="POST">
+		<div><p>Update outcome type</p></div>
+		<table>
+			<tr>
+				<td>Outcome type id: </td>
+				<td><input type="text" name="outcomeTypeId" /></td>
+			</tr>
+			
+			<tr>
+				<td>Outcome type Name: </td>
+				<td><input type="text" name="outcomeTypeName" /></td>
+			</tr>
+			
+			<tr>
+				<td>Note: </td>
+				<td><input type="text" name="note" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Update" />
+	</form>
+	<br /><hr />
+	
+	<form action="deleteOutcomeType.php" method="POST">
+		<div><p>Delete outcome type</p></div>
+		<table>
+			<tr>
+				<td>Outcome type id: </td>
+				<td><input type="text" name="outcomeTypeId" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Delete" />
+	</form>
+</body>

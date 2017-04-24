@@ -1,0 +1,80 @@
+<html>
+
+<head>
+</head>
+
+<body>
+	<form action="insertOutcome.php" method="POST">
+		<div><p>Insert outcome</p></div>
+		<table>
+			<tr>
+				<td>Outcome type id: </td>
+				<td><input type="text" name="outcomeTypeId" /></td>
+			</tr>
+
+			<tr>
+				<td>Outcome date: </td>
+				<td><input type="date" name="outcomeDate" /></td>
+			</tr>
+			
+			<tr>
+				<td>Day: </td>
+				<td><input type="text" name="day" /></td>
+			</tr>
+
+			<tr>
+				<td>Month: </td>
+				<td><input type="text" name="month" /></td>
+			</tr>
+
+			<tr>
+				<td>Year: </td>
+				<td><input type="text" name="year" /></td>
+			</tr>
+
+			<tr>
+				<td>Note: </td>
+				<td><input type="text" name="note" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Insert" />
+	</form>
+	
+	<br /><hr />
+	
+	<form action="updateOutcome.php" method="POST">
+		<div><p>Update outcome</p></div>
+		<table>
+			<tr>
+				<td>Outcome id: </td>
+				<td><input type="text" name="outcomeId" /></td>
+			</tr>
+			
+			<tr>
+				<td>Outcome type id: </td>
+				<td><input type="text" name="outcomeTypeId" /></td>
+			</tr>
+			
+			<tr>
+				<td>Note: </td>
+				<td><input type="text" name="note" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Update" />
+	</form>
+	<br /><hr />
+	
+	<form action="deleteOutcome.php" method="POST">
+		<div><p>Delete outcome</p></div>
+		<table>
+			<tr>
+				<td>Outcome id: </td>
+				<td><input type="text" name="outcomeId" /></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="Delete" />
+	</form>
+</body>
