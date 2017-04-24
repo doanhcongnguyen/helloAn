@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="75dp">
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:text="@string/textView"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvName"
+        />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvName"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvEmail"
+        />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvEmail"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvContact"
+        />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvContact"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvPassword"
+        />
+</RelativeLayout>

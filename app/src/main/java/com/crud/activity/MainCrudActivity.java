@@ -42,7 +42,7 @@ public class MainCrudActivity extends AppCompatActivity {
         Cursor persons = dbHelper.getAllPersons();
         String[] columns = new String[] {TablePerson.COLUMN_ID, TablePerson.COLUMN_NAME};
         int[] widgets = new int[] {R.id.personId, R.id.personName};
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.person_info, persons, columns, widgets, 0);
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.student_info, persons, columns, widgets, 0);
         listView = (ListView) findViewById(R.id.listView1);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
