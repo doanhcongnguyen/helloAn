@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +52,12 @@ public class ContactAdapter extends ArrayAdapter {
         if (row != null) {
             contactHolder = (ContactHolder) row.getTag();
         } else {
-            LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            // TODO: try to use this way
+            LayoutInflater layoutInflater = LayoutInflater.from(this.getContext());
+//            LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.row_layout, parent, false);
             contactHolder = new ContactHolder();
+
             contactHolder.tvName = (TextView) row.findViewById(R.id.tvName);
             contactHolder.tvEmail = (TextView) row.findViewById(R.id.tvEmail);
             contactHolder.tvContact = (TextView) row.findViewById(R.id.tvContact);
@@ -65,8 +69,22 @@ public class ContactAdapter extends ArrayAdapter {
         contactHolder.tvEmail.setText(contact.getEmail());
         contactHolder.tvContact.setText(contact.getContact());
         contactHolder.tvPassword.setText(contact.getPassword());
+
+        // NEW: set onclickListener
+        contactHolder.tvName.setOnClickListener(popupListerner);
+        contactHolder.tvName.setTag(position);
+
         return row;
     }
+
+    View.OnClickListener popupListerner = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int position = (int) view.getTag();
+            Contact contact = getItem(position);
+            Toast.makeText(getContext(), contact.getName() + " clicked!", Toast.LENGTH_LONG).show();
+        }
+    };
 
     static class ContactHolder {
         TextView tvName;

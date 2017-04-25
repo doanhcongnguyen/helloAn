@@ -14,7 +14,7 @@ public class LayoutExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout_example);
 
-        clickMe = (Button) findViewById(R.id.myButton);
+//        clickMe = (Button) findViewById(R.id.myButton);
     }
 
     public void clickMe(View view) {
