@@ -35,17 +35,21 @@
         <activity android:name=".DisplayListView" />
         <activity android:name=".InsertUser" />
         <activity android:name=".activity.HomeActivity">
+
+        </activity>
+        <activity android:name=".activity.AddOutcomeTypeActivity" />
+        <activity android:name=".activity.ViewOutcomeListActivity" />
+        <activity android:name=".activity.AddOutcomeActivity" />
+        <activity android:name=".activity.AddOutcomeHomeActivity" />
+        <activity android:name=".activity.AddOutcomeTypeHomeActivity" />
+        <activity android:name=".LayoutExampleActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AddOutcomeTypeActivity" />
-        <activity android:name=".activity.ViewOutcomeListActivity" />
-        <activity android:name=".activity.AddOutcomeActivity" />
-        <activity android:name=".activity.AddOutcomeHomeActivity" />
-        <activity android:name=".activity.AddOutcomeTypeHomeActivity"></activity>
     </application>
 
 </manifest>
