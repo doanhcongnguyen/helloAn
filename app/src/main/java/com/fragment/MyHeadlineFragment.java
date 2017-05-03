@@ -29,7 +29,7 @@ public class MyHeadlineFragment extends ListFragment {
         int layout = android.R.layout.simple_list_item_activated_1;
         String[] data = Data.Headlines;
 
-        setListAdapter(new ArrayAdapter<String>(getActivity(), layout, data));
+        setListAdapter(new ArrayAdapter<>(getActivity(), layout, data));
     }
 
     @Override

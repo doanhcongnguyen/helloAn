@@ -15,8 +15,6 @@ import alpha.com.newhelllo.R;
 
 public class MyArticleFragment extends Fragment {
 
-    final static String ARG_POSITION = "position";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.article_fragment, container, false);
@@ -27,20 +25,5 @@ public class MyArticleFragment extends Fragment {
         View v = getView();
         TextView article = (TextView) v.findViewById(R.id.article);
         article.setText(Data.Articles[position]);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        Bundle args = getArguments();
-        if (args != null) {
-            updateArticleView(args.getInt(ARG_POSITION));
-        }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
     }
 }
