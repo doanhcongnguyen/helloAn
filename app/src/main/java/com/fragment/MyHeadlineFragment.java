@@ -1,8 +1,8 @@
 package com.fragment;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.ListFragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -43,9 +43,9 @@ public class MyHeadlineFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        callback = (OnHeadlineSelectedListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callback = (OnHeadlineSelectedListener) getActivity();
     }
 
     @Override
