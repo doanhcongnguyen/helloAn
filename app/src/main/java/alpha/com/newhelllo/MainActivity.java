@@ -18,6 +18,9 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String URL = "https://doanh.000webhostapp.com/getUsersData.php";
+//    private static final String URL = "http://10.0.2.2:80/getUserData.php";
+
     String jsonString;
     String jsonStringParse;
 
@@ -55,12 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
-        String jsonUrl = "https://doanh.000webhostapp.com/getUsersData.php";
-
         @Override
         protected String doInBackground(Void... voids) {
             try {
-                URL url = new URL(jsonUrl);
+                URL url = new URL(URL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));

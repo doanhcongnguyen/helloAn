@@ -6,6 +6,7 @@ https://www.000webhost.com
 	- dbUser: id1414255_doanh
 	- dbPass: doanh
 
+- Xampp localhost directory: C:\xampp\htdocs
 
 
 
@@ -31,4 +32,15 @@ CREATE TABLE outcome (
 	PRIMARY KEY (outcome_id)
 );
 
-$sql  = 'INSERT INTO `outcome_type`(`outcome_name`) VALUES (\'books\'), (\'lunch\'), (\'misc\')';
+CREATE TABLE user (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    name varchar(300),
+    password varchar(200),
+    contact varchar(200),
+    country varchar(200),
+    PRIMARY KEY (user_id)
+);
+
+$sql  = 'INSERT INTO `outcome_type`(`outcome_type_name`) VALUES (\'books\'), (\'lunch\'), (\'misc\')';
+
+

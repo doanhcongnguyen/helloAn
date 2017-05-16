@@ -24,6 +24,7 @@ import alpha.com.newhelllo.R;
 public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
 
     EditText etOutcomeTypeName;
+    private static final String URL_ADD_OUTCOME_TYPE = "https://doanh.000webhostapp.com/insertOutcomeType.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,10 @@ public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
         }
 
         protected String doInBackground(String... params) {
-            String reg_url = "https://doanh.000webhostapp.com/insertOutcomeType.php";
+
             String outcomeTypeName = params[0];
             try {
-                URL url = new URL(reg_url);
+                URL url = new URL(URL_ADD_OUTCOME_TYPE);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
@@ -76,8 +77,15 @@ public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ctx, AddOutcomeTypeActivity.class);
+            Intent intent = new Intent(ctx, HomeActivity.class);
             startActivity(intent);
+
+//            Intent intent = new Intent(ctx, AddOutcomeTypeActivity.class);
+//            startActivity(intent);
+
+//            GetOutcomeType get = new GetOutcomeType(ctx);
+//            get.execute();
+//            finish();
         }
 
         @Override
