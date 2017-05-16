@@ -8,14 +8,25 @@ import java.util.Date;
 
 public class Outcome {
 
+    private Long no;
     private Long outcomeId;
     private String outcomeName;
-    private Long outcomeType;
+    private Long outcomeTypeId;
     private Double amount;
     private String note;
     private Date createdDate;
+    private String outcomeDate;
+    private Long day;
     private Long month;
     private Long year;
+
+    public Long getNo() {
+        return no;
+    }
+
+    public void setNo(Long no) {
+        this.no = no;
+    }
 
     public Long getOutcomeId() {
         return outcomeId;
@@ -33,12 +44,12 @@ public class Outcome {
         this.outcomeName = outcomeName;
     }
 
-    public Long getOutcomeType() {
-        return outcomeType;
+    public Long getOutcomeTypeId() {
+        return outcomeTypeId;
     }
 
-    public void setOutcomeType(Long outcomeType) {
-        this.outcomeType = outcomeType;
+    public void setOutcomeTypeId(Long outcomeTypeId) {
+        this.outcomeTypeId = outcomeTypeId;
     }
 
     public Double getAmount() {
@@ -79,5 +90,21 @@ public class Outcome {
 
     public void setYear(Long year) {
         this.year = year;
+    }
+
+    public String getOutcomeDate() {
+        return outcomeDate;
+    }
+
+    public void setOutcomeDate(String outcomeDate) {
+        this.outcomeDate = outcomeDate;
+    }
+
+    public Long getDay() {
+        return day;
+    }
+
+    public void setDay(Long day) {
+        this.day = day;
     }
 }

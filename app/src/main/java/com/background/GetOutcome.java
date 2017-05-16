@@ -12,23 +12,24 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import alpha.com.newhelllo.activity.AddOutcomeTypeActivity;
+import alpha.com.newhelllo.activity.AddOutcomeActivity;
+
 
 /**
  * Created by alpha on 5/16/2017.
  */
 
-public class GetOutcomeType extends AsyncTask<Void, Void, String> {
+public class GetOutcome extends AsyncTask<Void, Void, String> {
 
-    public static final String OUTCOME_TYPE_JSON = "OUTCOME_TYPE_JSON";
-    public static final String URL_GET_OUTCOME_TYPE = "https://doanh.000webhostapp.com/getOutcomeType.php";
+    public static final String OUTCOME_JSON = "OUTCOME_JSON";
+    public static final String URL_GET_OUTCOME = "https://doanh.000webhostapp.com/getOutcome.php";
 
     Context ctx;
 
     @Override
     protected String doInBackground(Void... voids) {
         try {
-            URL url = new URL(URL_GET_OUTCOME_TYPE);
+            URL url = new URL(URL_GET_OUTCOME);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -49,14 +50,14 @@ public class GetOutcomeType extends AsyncTask<Void, Void, String> {
         return null;
     }
 
-    public GetOutcomeType(Context ctx) {
+    public GetOutcome(Context ctx) {
         this.ctx = ctx;
     }
 
     @Override
     protected void onPostExecute(String result) {
-        Intent intent = new Intent(ctx, AddOutcomeTypeActivity.class);
-        intent.putExtra(OUTCOME_TYPE_JSON, result);
+        Intent intent = new Intent(ctx, AddOutcomeActivity.class);
+        intent.putExtra(OUTCOME_JSON, result);
         ctx.startActivity(intent);
     }
 

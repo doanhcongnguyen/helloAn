@@ -3,39 +3,57 @@
     android:layout_width="match_parent" android:layout_height="75dp">
 
     <TextView
-        android:layout_width="80dp"
+        android:layout_width="30dp"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:text="@string/textView"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceLarge"
-        android:id="@+id/tvName"
+        android:id="@+id/tvNo"
+        />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvNo"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvOutcomeTypeId"
+        />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvOutcomeTypeId"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvOutcomeDate"
         />
     <TextView
         android:layout_width="80dp"
         android:layout_height="match_parent"
         android:text="@string/textView"
-        android:layout_toEndOf="@+id/tvName"
+        android:layout_toEndOf="@+id/tvOutcomeDate"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceLarge"
-        android:id="@+id/tvEmail"
+        android:id="@+id/tvDay"
         />
     <TextView
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent"
         android:text="@string/textView"
-        android:layout_toEndOf="@+id/tvEmail"
+        android:layout_toEndOf="@+id/tvDay"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceLarge"
-        android:id="@+id/tvContact"
+        android:id="@+id/tvMonth"
         />
     <TextView
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent"
         android:text="@string/textView"
-        android:layout_toEndOf="@+id/tvContact"
+        android:layout_toEndOf="@+id/tvMonth"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceLarge"
-        android:id="@+id/tvPassword"
+        android:id="@+id/tvYear"
         />
 </RelativeLayout>
