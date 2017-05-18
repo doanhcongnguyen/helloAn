@@ -1,16 +1,15 @@
 package com.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.background.DeleteOutcomeType;
 import com.util.Constant;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class OutcomeTypeAdapter extends ArrayAdapter {
     private List<OutcomeType> list = new ArrayList<>();
     private Context context;
 
-    public OutcomeTypeAdapter(@NonNull Context context, @LayoutRes int resource) {
+    public OutcomeTypeAdapter(Context context, int resource) {
         super(context, resource);
         this.context = context;
     }
@@ -43,15 +42,13 @@ public class OutcomeTypeAdapter extends ArrayAdapter {
         return list.size();
     }
 
-    @Nullable
     @Override
     public OutcomeType getItem(int position) {
         return list.get(position);
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         OutcomeTypeHolder outcomeTypeHolder;
         if (row != null) {
@@ -61,18 +58,29 @@ public class OutcomeTypeAdapter extends ArrayAdapter {
             row = layoutInflater.inflate(R.layout.outcome_type_row_layout, parent, false);
             outcomeTypeHolder = new OutcomeTypeHolder();
             outcomeTypeHolder.tvNo = (TextView) row.findViewById(R.id.tvNo);
-            outcomeTypeHolder.tvOutcomeName = (TextView) row.findViewById(R.id.tvOutcomeTypeName);
+            outcomeTypeHolder.tvOutcomeTypeName = (TextView) row.findViewById(R.id.tvOutcomeTypeName);
+            outcomeTypeHolder.tvDeleteOutcomeType = (TextView) row.findViewById(R.id.tvDeleteOutcomeType);
             row.setTag(outcomeTypeHolder);
         }
         OutcomeType outcomeType = this.getItem(position);
         outcomeTypeHolder.tvNo.setText(outcomeType.getNo().toString());
-        outcomeTypeHolder.tvOutcomeName.setText(outcomeType.getOutcomeTypeName());
+        outcomeTypeHolder.tvOutcomeTypeName.setText(outcomeType.getOutcomeTypeName());
+        outcomeTypeHolder.tvDeleteOutcomeType.setText("x");
 
-        // Set onclick to edit
-        outcomeTypeHolder.tvOutcomeName.setOnClickListener(editOutcomeTypeListener);
-        outcomeTypeHolder.tvOutcomeName.setTag(position);
-
+        this.doSetEditOnclick(outcomeTypeHolder, position);
+        this.doSetDeleteOnclick(outcomeTypeHolder, position);
         return row;
+    }
+
+
+    private void doSetEditOnclick(OutcomeTypeHolder outcomeTypeHolder, int position) {
+        outcomeTypeHolder.tvOutcomeTypeName.setOnClickListener(editOutcomeTypeListener);
+        outcomeTypeHolder.tvOutcomeTypeName.setTag(position);
+    }
+
+    private void doSetDeleteOnclick(OutcomeTypeHolder outcomeTypeHolder, int position) {
+        outcomeTypeHolder.tvDeleteOutcomeType.setOnClickListener(deleteOutcomeTypeListener);
+        outcomeTypeHolder.tvDeleteOutcomeType.setTag(position);
     }
 
     View.OnClickListener editOutcomeTypeListener = new View.OnClickListener() {
@@ -89,8 +97,22 @@ public class OutcomeTypeAdapter extends ArrayAdapter {
         }
     };
 
+    View.OnClickListener deleteOutcomeTypeListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (context != null) {
+                int position = (int) view.getTag();
+                OutcomeType outcomeType = getItem(position);
+                DeleteOutcomeType backgroundTask = new DeleteOutcomeType(context);
+                backgroundTask.execute(outcomeType.getOutcomeTypeId().toString());
+                ((Activity) context).finish();
+            }
+        }
+    };
+
     static class OutcomeTypeHolder {
         TextView tvNo;
-        TextView tvOutcomeName;
+        TextView tvOutcomeTypeName;
+        TextView tvDeleteOutcomeType;
     }
 }

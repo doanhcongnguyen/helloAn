@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
+import com.util.Constant;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,15 +23,12 @@ import alpha.com.newhelllo.activity.AddOutcomeActivity;
 
 public class GetOutcome extends AsyncTask<Void, Void, String> {
 
-    public static final String OUTCOME_JSON = "OUTCOME_JSON";
-    public static final String URL_GET_OUTCOME = "https://doanh.000webhostapp.com/getOutcome.php";
-
     Context ctx;
 
     @Override
     protected String doInBackground(Void... voids) {
         try {
-            URL url = new URL(URL_GET_OUTCOME);
+            URL url = new URL(Constant.Url.getOutcome);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -57,7 +56,7 @@ public class GetOutcome extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         Intent intent = new Intent(ctx, AddOutcomeActivity.class);
-        intent.putExtra(OUTCOME_JSON, result);
+        intent.putExtra(Constant.IntentExtraKey.outcomeJson, result);
         ctx.startActivity(intent);
     }
 

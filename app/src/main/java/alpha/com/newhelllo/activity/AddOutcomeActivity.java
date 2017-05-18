@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import com.adapter.Outcome;
 import com.adapter.OutcomeAdapter;
-import com.background.GetOutcome;
+import com.util.Constant;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,7 +32,7 @@ public class AddOutcomeActivity extends AppCompatActivity {
         outcomeAdapter = new OutcomeAdapter(this, R.layout.outcome_row_layout);
         listView = (ListView) findViewById(R.id.addOutcomeList);
         listView.setAdapter(outcomeAdapter);
-        JSON_STRING = getIntent().getExtras().getString(GetOutcome.OUTCOME_JSON);
+        JSON_STRING = getIntent().getExtras().getString(Constant.IntentExtraKey.outcomeJson);
         try {
             jsonObject = new JSONObject(JSON_STRING);
             int count = 0;

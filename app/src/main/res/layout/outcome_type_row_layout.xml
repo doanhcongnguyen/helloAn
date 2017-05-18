@@ -14,12 +14,21 @@
         android:id="@+id/tvNo"
         />
     <TextView
-        android:layout_width="160dp"
+        android:layout_width="240dp"
         android:layout_height="match_parent"
         android:text="@string/textView"
         android:layout_toEndOf="@+id/tvNo"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceLarge"
         android:id="@+id/tvOutcomeTypeName"
+        />
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:text="@string/textView"
+        android:layout_toEndOf="@+id/tvOutcomeTypeName"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/tvDeleteOutcomeType"
         />
 </RelativeLayout>

@@ -16,5 +16,13 @@ public interface Constant {
 
         String insertOutcomeType = "https://doanh.000webhostapp.com/insertOutcomeType.php";
         String updateOutcomeType = "https://doanh.000webhostapp.com/updateOutcomeType.php";
+        String deleteOutcomeType = "https://doanh.000webhostapp.com/deleteOutcomeType.php";
+        String getOutcomeType = "https://doanh.000webhostapp.com/getOutcomeType.php";
+        String getOutcome = "https://doanh.000webhostapp.com/getOutcome.php";
+    }
+
+    interface IntentExtraKey {
+        String outcomeTypeJson = "OUTCOME_TYPE_JSON";
+        String outcomeJson = "OUTCOME_JSON";
     }
 }
