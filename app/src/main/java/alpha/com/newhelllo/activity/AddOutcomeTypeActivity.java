@@ -36,14 +36,14 @@ public class AddOutcomeTypeActivity extends AppCompatActivity {
         try {
             jsonObject = new JSONObject(JSON_STRING);
             int count = 0;
-            jsonArray = jsonObject.getJSONArray("outcome_type");
+            jsonArray = jsonObject.getJSONArray(Constant.ServerResponse.outcomeType);
             String outcomeTypeName;
             String outcomeTypeId;
             Long no = 1L;
             while (count < jsonArray.length()) {
                 JSONObject obj = jsonArray.getJSONObject(count);
-                outcomeTypeName = obj.getString("outcomeTypeName");
-                outcomeTypeId = obj.getString("outcomeTypeId");
+                outcomeTypeName = obj.getString(Constant.ServerResponse.OutcomeType.name);
+                outcomeTypeId = obj.getString(Constant.ServerResponse.OutcomeType.id);
                 OutcomeType outcomeType = new OutcomeType();
                 outcomeType.setNo(no++);
                 outcomeType.setOutcomeTypeName(outcomeTypeName);

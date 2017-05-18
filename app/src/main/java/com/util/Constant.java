@@ -25,4 +25,13 @@ public interface Constant {
         String outcomeTypeJson = "OUTCOME_TYPE_JSON";
         String outcomeJson = "OUTCOME_JSON";
     }
+
+    interface ServerResponse {
+        String outcomeType = "outcome_type";
+
+        interface OutcomeType {
+            String name = "outcomeTypeName";
+            String id = "outcomeTypeId";
+        }
+    }
 }
