@@ -23,14 +23,14 @@ import java.net.URLEncoder;
 
 import alpha.com.newhelllo.R;
 
-public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
+public class AddOutcomeTypeActivity extends AppCompatActivity {
 
     EditText etOutcomeTypeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_outcome_type_home_layout);
+        setContentView(R.layout.add_outcome_type_layout);
         etOutcomeTypeName = (EditText) findViewById(R.id.outcomeTypeName);
     }
 

@@ -8,12 +8,12 @@ import android.widget.Toast;
 
 import alpha.com.newhelllo.R;
 
-public class AddOutcomeHomeActivity extends AppCompatActivity {
+public class AddOutcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_outcome_home_layout);
+        setContentView(R.layout.add_outcome_layout);
     }
 
     public void addNewOutcomeType(View view) {

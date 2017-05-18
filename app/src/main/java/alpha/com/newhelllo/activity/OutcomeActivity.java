@@ -27,7 +27,7 @@ public class OutcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_outcome_layout);
+        setContentView(R.layout.outcome_layout);
 
         outcomeAdapter = new OutcomeAdapter(this, R.layout.outcome_row_layout);
         listView = (ListView) findViewById(R.id.addOutcomeList);
@@ -66,7 +66,7 @@ public class OutcomeActivity extends AppCompatActivity {
     }
 
     public void addOutcome(View view) {
-        Intent intent = new Intent(this, AddOutcomeHomeActivity.class);
+        Intent intent = new Intent(this, AddOutcomeActivity.class);
         startActivity(intent);
     }
 }

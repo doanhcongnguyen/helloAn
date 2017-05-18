@@ -57,7 +57,7 @@ public class OutcomeTypeActivity extends AppCompatActivity {
     }
 
     public void addOutcomeType(View view) {
-        Intent intent = new Intent(this, AddOutcomeTypeHomeActivity.class);
+        Intent intent = new Intent(this, AddOutcomeTypeActivity.class);
         startActivity(intent);
     }
 }
