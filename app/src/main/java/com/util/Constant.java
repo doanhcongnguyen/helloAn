@@ -34,4 +34,6 @@ public interface Constant {
             String id = "outcomeTypeId";
         }
     }
+
+    String utf8 = "UTF-8";
 }

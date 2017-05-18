@@ -52,6 +52,8 @@
     <string name="outcomeTypeName">outcome type name</string>
     <string name="addBtn">Add</string>
     <string name="editBtn">Edit</string>
+    <string name="outcomeType">Outcome type</string>
+    <string name="outcome">Outcome</string>
 
 
 </resources>

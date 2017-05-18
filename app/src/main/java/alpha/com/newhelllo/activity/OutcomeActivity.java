@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import alpha.com.newhelllo.R;
 
-public class AddOutcomeActivity extends AppCompatActivity {
+public class OutcomeActivity extends AppCompatActivity {
 
     String JSON_STRING;
     JSONObject jsonObject;

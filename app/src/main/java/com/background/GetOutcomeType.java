@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import alpha.com.newhelllo.activity.AddOutcomeTypeActivity;
+import alpha.com.newhelllo.activity.OutcomeTypeActivity;
 
 /**
  * Created by alpha on 5/16/2017.
@@ -54,7 +54,7 @@ public class GetOutcomeType extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        Intent intent = new Intent(ctx, AddOutcomeTypeActivity.class);
+        Intent intent = new Intent(ctx, OutcomeTypeActivity.class);
         intent.putExtra(Constant.IntentExtraKey.outcomeTypeJson, result);
         ctx.startActivity(intent);
     }

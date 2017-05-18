@@ -40,9 +40,9 @@ public class UpdateOutcomeType extends AsyncTask<String, Void, String> {
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             OutputStream os = httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-            String data = URLEncoder.encode("outcomeTypeId", "UTF-8") + "=" + URLEncoder.encode(outcomeTypeId, "UTF-8") + "&" +
-                    URLEncoder.encode("outcomeTypeName", "UTF-8") + "=" + URLEncoder.encode(outcomeTypeName, "UTF-8");
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os, Constant.utf8));
+            String data = URLEncoder.encode(Constant.ServerResponse.OutcomeType.id, Constant.utf8) + "=" + URLEncoder.encode(outcomeTypeId, Constant.utf8) + "&" +
+                    URLEncoder.encode(Constant.ServerResponse.OutcomeType.name, Constant.utf8) + "=" + URLEncoder.encode(outcomeTypeName, Constant.utf8);
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();

@@ -18,7 +18,7 @@ public class AddOutcomeHomeActivity extends AppCompatActivity {
 
     public void addNewOutcomeType(View view) {
         Toast.makeText(getApplicationContext(), "Add outcome type", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, AddOutcomeTypeActivity.class);
+        Intent intent = new Intent(this, OutcomeTypeActivity.class);
         startActivity(intent);
     }
 }

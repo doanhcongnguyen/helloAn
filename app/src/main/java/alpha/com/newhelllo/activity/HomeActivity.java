@@ -1,9 +1,9 @@
 package alpha.com.newhelllo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.background.GetOutcome;
 import com.background.GetOutcomeType;
@@ -18,20 +18,34 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_layout);
     }
 
-    public void addOutcomeType(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_outcome_type:
+                outcomeType();
+                return true;
+            case R.id.action_outcome:
+                outcome();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void outcomeType() {
         new GetOutcomeType(this).execute();
         finish();
     }
 
-    public void addOutcome(View view) {
-//        Intent intent = new Intent(this, AddOutcomeActivity.class);
-//        startActivity(intent);
+    public void outcome() {
         new GetOutcome(this).execute();
         finish();
-    }
-
-    public void viewOutcomeList(View view) {
-        Intent intent = new Intent(this, ViewOutcomeListActivity.class);
-        startActivity(intent);
     }
 }

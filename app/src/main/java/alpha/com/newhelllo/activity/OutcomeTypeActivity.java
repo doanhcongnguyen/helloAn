@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import alpha.com.newhelllo.R;
 
-public class AddOutcomeTypeActivity extends AppCompatActivity {
+public class OutcomeTypeActivity extends AppCompatActivity {
 
     String JSON_STRING;
     JSONObject jsonObject;
@@ -27,7 +27,7 @@ public class AddOutcomeTypeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_outcome_type_layout);
+        setContentView(R.layout.outcome_type_layout);
 
         outcomeTypeAdapter = new OutcomeTypeAdapter(this, R.layout.outcome_type_row_layout);
         listView = (ListView) findViewById(R.id.addOutcomeTypeList);
