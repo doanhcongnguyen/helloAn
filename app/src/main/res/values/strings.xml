@@ -51,6 +51,7 @@
     <string name="newBtn">New</string>
     <string name="outcomeTypeName">outcome type name</string>
     <string name="addBtn">Add</string>
+    <string name="editBtn">Edit</string>
 
 
 </resources>

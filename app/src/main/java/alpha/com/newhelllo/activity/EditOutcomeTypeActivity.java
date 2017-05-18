@@ -23,19 +23,27 @@ import java.net.URLEncoder;
 
 import alpha.com.newhelllo.R;
 
-public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
+public class EditOutcomeTypeActivity extends AppCompatActivity {
 
-    EditText etOutcomeTypeName;
+    private EditText ettOutcomeTypeName;
+    private String outcomeTypeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_outcome_type_home_layout);
-        etOutcomeTypeName = (EditText) findViewById(R.id.outcomeTypeName);
+        setContentView(R.layout.edit_outcome_type_layout);
+
+        ettOutcomeTypeName = (EditText) findViewById(R.id.ettEditOutcomeTypeName);
+
+        Intent intent = getIntent();
+        outcomeTypeId = intent.getStringExtra(Constant.EditOutcomeTypeValue.id);
+        String outcomeTypeName = intent.getStringExtra(Constant.EditOutcomeTypeValue.name);
+        ettOutcomeTypeName.setText(outcomeTypeName);
+
     }
 
-    public void addNewOutcomeType(View view) {
-        String outcomeTypeName = etOutcomeTypeName.getText().toString();
+    public void editOutcomeType(View view) {
+        String outcomeTypeName = ettOutcomeTypeName.getText().toString();
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(outcomeTypeName);
         finish();
@@ -49,23 +57,23 @@ public class AddOutcomeTypeHomeActivity extends AppCompatActivity {
         }
 
         protected String doInBackground(String... params) {
-
             String outcomeTypeName = params[0];
             try {
-                URL url = new URL(Constant.Url.insertOutcomeType);
+                URL url = new URL(Constant.Url.updateOutcomeType);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 OutputStream os = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-                String data = URLEncoder.encode("outcomeTypeName", "UTF-8") + "=" + URLEncoder.encode(outcomeTypeName, "UTF-8");
+                String data = URLEncoder.encode("outcomeTypeId", "UTF-8") + "=" + URLEncoder.encode(outcomeTypeId, "UTF-8") + "&" +
+                        URLEncoder.encode("outcomeTypeName", "UTF-8") + "=" + URLEncoder.encode(outcomeTypeName, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 os.close();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 inputStream.close();
-                return "Add outcome type successfully!";
+                return "Edit outcome type successfully!";
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();

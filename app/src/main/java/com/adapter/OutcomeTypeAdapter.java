@@ -1,6 +1,7 @@
 package com.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.util.Constant;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import alpha.com.newhelllo.R;
+import alpha.com.newhelllo.activity.EditOutcomeTypeActivity;
 
 /**
  * Created by alpha on 4/22/2017.
@@ -21,10 +25,12 @@ import alpha.com.newhelllo.R;
 
 public class OutcomeTypeAdapter extends ArrayAdapter {
 
-    List<OutcomeType> list = new ArrayList<>();
+    private List<OutcomeType> list = new ArrayList<>();
+    private Context context;
 
     public OutcomeTypeAdapter(@NonNull Context context, @LayoutRes int resource) {
         super(context, resource);
+        this.context = context;
     }
 
     public void add(OutcomeType outcomeType) {
@@ -61,8 +67,27 @@ public class OutcomeTypeAdapter extends ArrayAdapter {
         OutcomeType outcomeType = this.getItem(position);
         outcomeTypeHolder.tvNo.setText(outcomeType.getNo().toString());
         outcomeTypeHolder.tvOutcomeName.setText(outcomeType.getOutcomeTypeName());
+
+        // Set onclick to edit
+        outcomeTypeHolder.tvOutcomeName.setOnClickListener(editOutcomeTypeListener);
+        outcomeTypeHolder.tvOutcomeName.setTag(position);
+
         return row;
     }
+
+    View.OnClickListener editOutcomeTypeListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (context != null) {
+                int position = (int) view.getTag();
+                OutcomeType outcomeType = getItem(position);
+                Intent intent = new Intent(context, EditOutcomeTypeActivity.class);
+                intent.putExtra(Constant.EditOutcomeTypeValue.id, outcomeType.getOutcomeTypeId().toString());
+                intent.putExtra(Constant.EditOutcomeTypeValue.name, outcomeType.getOutcomeTypeName());
+                context.startActivity(intent);
+            }
+        }
+    };
 
     static class OutcomeTypeHolder {
         TextView tvNo;
