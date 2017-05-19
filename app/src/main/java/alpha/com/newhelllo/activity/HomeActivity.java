@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.background.GetOutcome;
 import com.background.GetOutcomeType;
+import com.background.GetOutcomeTypeToCreateOutcome;
 
 import alpha.com.newhelllo.R;
 
@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void outcome() {
-        new GetOutcome(this).execute();
+        new GetOutcomeTypeToCreateOutcome(this).execute();
         finish();
     }
 }

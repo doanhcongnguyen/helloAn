@@ -27,6 +27,7 @@ CREATE TABLE outcome (
 	month int,
 	year int,
 	user_id int,
+	amount int,
 	note varchar(300),
 	created_date date,
 	PRIMARY KEY (outcome_id)

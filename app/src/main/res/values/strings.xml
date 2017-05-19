@@ -54,6 +54,8 @@
     <string name="editBtn">Edit</string>
     <string name="outcomeType">Outcome type</string>
     <string name="outcome">Outcome</string>
+    <string name="amount">amount</string>
+    <string name="note">note</string>
 
 
 </resources>

@@ -18,7 +18,7 @@ import alpha.com.newhelllo.R;
 
 public class OutcomeTypeActivity extends AppCompatActivity {
 
-    String JSON_STRING;
+    String outcomeTypeJson;
     JSONObject jsonObject;
     JSONArray jsonArray;
     OutcomeTypeAdapter outcomeTypeAdapter;
@@ -32,9 +32,9 @@ public class OutcomeTypeActivity extends AppCompatActivity {
         outcomeTypeAdapter = new OutcomeTypeAdapter(this, R.layout.outcome_type_row_layout);
         listView = (ListView) findViewById(R.id.addOutcomeTypeList);
         listView.setAdapter(outcomeTypeAdapter);
-        JSON_STRING = getIntent().getExtras().getString(Constant.IntentExtraKey.outcomeTypeJson);
+        outcomeTypeJson = getIntent().getExtras().getString(Constant.IntentExtraKey.outcomeTypeJson);
         try {
-            jsonObject = new JSONObject(JSON_STRING);
+            jsonObject = new JSONObject(outcomeTypeJson);
             int count = 0;
             jsonArray = jsonObject.getJSONArray(Constant.ServerResponse.outcomeType);
             String outcomeTypeName;

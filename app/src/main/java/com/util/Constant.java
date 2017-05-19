@@ -18,6 +18,7 @@ public interface Constant {
         String updateOutcomeType = "https://doanh.000webhostapp.com/updateOutcomeType.php";
         String deleteOutcomeType = "https://doanh.000webhostapp.com/deleteOutcomeType.php";
         String getOutcomeType = "https://doanh.000webhostapp.com/getOutcomeType.php";
+        String insertOutcome = "https://doanh.000webhostapp.com/insertOutcome.php";
         String getOutcome = "https://doanh.000webhostapp.com/getOutcome.php";
     }
 
@@ -28,10 +29,21 @@ public interface Constant {
 
     interface ServerResponse {
         String outcomeType = "outcome_type";
+        String outcome = "outcome";
 
         interface OutcomeType {
             String name = "outcomeTypeName";
             String id = "outcomeTypeId";
+        }
+
+        interface Outcome {
+            String name = "outcomeName";
+            String id = "outcomeId";
+            String day = "day";
+            String month = "month";
+            String year = "year";
+            String amount = "amount";
+            String note = "note";
         }
     }
 
